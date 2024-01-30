@@ -1,0 +1,1 @@
+This program contacts the designated server and extracts the IP addresses of all servers associated with the given domain name.  Run the program by entering 'python DNSClient.py' followed by the name of the DNS server you wish to find to the IP address for.

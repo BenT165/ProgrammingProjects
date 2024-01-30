@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Poodle Search</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="style.css">
+
+    </head>
+<body>
+
+    <button class="button" onclick="location.href='index.html'">Take Me Back</button>
+    <div class="imageAdvanced">
+        <img src="assets/logo.png">
+    </div>
+    
+    <div class="advancedSearchTitle">
+       <h1>Advanced Search</h1> 
+    </div>
+
+    <div class="advancedSearch">
+    <div class="advancedSearchHeader">Find pages with...</div>
+    <br>
+    
+    <form action="https://www.google.com/search" method="GET" class="searchOptions">
+        
+        <label for="field1" >all these words:</label>
+        <input type="text" class="textinput" id="field1" value="" name="as_q"></input>
+        <br>
+        <label for="field2">this exact word or phrase:</label>
+        <input type="text" class="textinput" id="field2" value="" name="as_epq"></input>
+        <br>
+        <label for="field3">any of these words:</label>
+        <input type="text" class="textinput" id="field3" value="" name="as_oq"></input>
+        <br>
+        <label for="field4">none of these words:</label>
+        <input type="text" class="textinput" id="field4" value="" name="as_q"></input>
+        <br>
+        <div class="advancedSearchButton">
+        <input type="submit" value="Advanced Search" ></input>
+        </div>
+    </form>
+</div>
+</body>
+
+</html>
