@@ -1,0 +1,101 @@
+{% extends "home/layout.html" %}
+{% load static %}
+
+    
+    
+    
+
+  {% block loadInHead %}
+    <link rel="stylesheet" type="text/css" href="{% static 'home/post.css' %}" />
+   
+    
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="{% static 'home/post.js' %}"></script>
+  {% endblock %}
+
+{% block content %}
+  <body class="backdrop">
+  
+  
+    <br>
+    <br>
+    <br>
+    <div class="container">
+        <h1 class="new_post_header">Create new post</h1>
+        <!--<form action="/action_page.php" metod="POST">
+                <input type="file" id="myFile" name="filename">
+                <br>
+                <input type="submit" class="submit">
+            
+        </form>-->
+        <nav class="options">
+          <a href="{% url 'index' %}">
+            <!--TODO ask Krishna why X button not click when tab width goes below specific threshold-->
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black" class="bi bi-x" viewBox="0 0 16 16" id="x">
+              <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
+            </svg>
+          </a>
+          
+          
+          <button class="next" id="next">Next</button>
+          <script>
+            $(document).ready(function() {      
+              $('#next').click(function() {
+                
+                
+                // If the user confirms, proceed with the navigation
+             
+                  $.ajax({
+                    url: '/',  // URL endpoint associated with the index view
+                    type: 'GET',  // HTTP method
+                    success: function(response) {
+                      // Handle successful response (e.g., render response HTML)
+                      $('body').html(response);
+                    },
+                    error: function(xhr, status, error) {
+                      // Handle error
+                      console.error(error);
+                      // Remove the first child element from #frame
+                      $('#frame').children().first().remove();
+                    }
+                  });
+             
+              });
+            });
+          </script>
+          
+      
+        
+        </nav>
+        <div class="frame" id="frame">
+          <div id="cropped-image" style="width: 100%; height: 100%;"></div>
+        </div>
+
+        <div class="frames">
+    
+          <button class="input" onclick="uploadImage()">Select from device</button>
+      
+
+           
+          <div class="caption_container" id="textbox">
+            <span id="caption" contenteditable="false">Write a caption...</span>
+          </div>
+      
+        </div>
+            
+
+       
+    </div>
+ 
+
+
+     
+
+  
+    
+    <!-- Add your JavaScript files or scripts here -->
+
+</body>
+{% endblock %}
+
